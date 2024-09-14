@@ -14,12 +14,13 @@ namespace WebAPI.Controllers
     public class DepartmentController : ApiController
     {
         //api/department
-        public HttpResponseMessage Get() {
+        public HttpResponseMessage Get()
+        {
             DataTable employeeTable = new DataTable();
             string query = @"SELECT DepartmentID, DepartmentName FROM Departments";
 
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EmployeeAppDB"].ConnectionString))
-            using (var cmd = new SqlCommand(query,con))
+            using (var cmd = new SqlCommand(query, con))
             using (var da = new SqlDataAdapter(cmd))
             {
                 cmd.CommandType = CommandType.Text;
@@ -27,10 +28,35 @@ namespace WebAPI.Controllers
             }
 
 
-                return Request.CreateResponse(HttpStatusCode.OK,employeeTable);
-                //return new HttpResponseMessage(HttpStatusCode.OK); 
-        
+            return Request.CreateResponse(HttpStatusCode.OK, employeeTable);
+            //return new HttpResponseMessage(HttpStatusCode.OK); 
+
         }
-        
+
+        public string Post(Department dep)
+        {
+            try
+            {
+                DataTable departmentTable = new DataTable();
+                string query = @"INSERT INTO dbo.Departments VALUES('" + dep.DepartmentName + @"')";
+
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EmployeeAppDB"].ConnectionString))
+                using (var cmd = new SqlCommand(query, con))
+                using (var da = new SqlDataAdapter(cmd))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    da.Fill(departmentTable);
+                }
+
+                return "Added Successfully";
+            }
+
+            catch
+            {
+                return "Failed to add";
+            }
+
+        }
+
     }
 }
