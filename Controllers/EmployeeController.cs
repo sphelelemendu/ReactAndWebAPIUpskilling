@@ -36,10 +36,12 @@ namespace WebAPI.Controllers
             {
                 DataTable employeeTable = new DataTable();
                 string query = @"INSERT INTO dbo.Employees(EmployeeName,Department,MailID,DOJ) VALUES(
-                '" +emp.EmployeeName + @"',
-                '" +emp.DepartmentName + @"',
-                '" +emp.MailID + @"',
-                '" +emp.DOJ +@"'";
+                '" + emp.EmployeeName + @"',
+                '" + emp.DepartmentName + @"',
+                '" + emp.MailID + @"',
+                '" + emp.DOJ + @"'
+                )";
+
 
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EmployeeAppDB"].ConnectionString))
                 using (var cmd = new SqlCommand(query, con))
