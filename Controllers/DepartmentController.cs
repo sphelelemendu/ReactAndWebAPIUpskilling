@@ -56,6 +56,58 @@ namespace WebAPI.Controllers
             }
 
         }
+        public string Put(Department dep)
+        {
+            try
+            {
+                DataTable departmentTable = new DataTable();
+                string query = @"
+                UPDATE dbo.Departments SET
+                DepartmentName= '" + dep.DepartmentName + @"'
+               
+                WHERE DepartmentID = " + dep.DepartmentID + @"
+                ";
+
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EmployeeAppDB"].ConnectionString))
+                using (var cmd = new SqlCommand(query, con))
+                using (var da = new SqlDataAdapter(cmd))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    da.Fill(departmentTable);
+                }
+                return "Updated Successfully";
+            }
+
+            catch
+            {
+                return "Failed to update";
+            }
+
+        }
+        public string Delete(int Id)
+        {
+            try
+            {
+                DataTable departmentTable = new DataTable();
+                string query = @"
+                delete from dbo.Departments where DepartmentID = " + Id;
+
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EmployeeAppDB"].ConnectionString))
+                using (var cmd = new SqlCommand(query, con))
+                using (var da = new SqlDataAdapter(cmd))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    da.Fill(departmentTable);
+                }
+                return "Deleted Successfully";
+            }
+
+            catch
+            {
+                return "Failed to delete";
+            }
+
+        }
 
     }
 }
