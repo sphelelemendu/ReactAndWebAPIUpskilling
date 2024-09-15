@@ -42,7 +42,6 @@ namespace WebAPI.Controllers
                 '" + emp.DOJ + @"'
                 )";
 
-
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EmployeeAppDB"].ConnectionString))
                 using (var cmd = new SqlCommand(query, con))
                 using (var da = new SqlDataAdapter(cmd))
