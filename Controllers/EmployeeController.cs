@@ -18,7 +18,7 @@ namespace WebAPI.Controllers
         public HttpResponseMessage Get()
         {
             DataTable employeeTable = new DataTable();
-            string query = @"SELECT EmployeeID, EmployeeName,MailID, CONVERT(varchar(10),DOJ,120) AS DOJ FROM dbo.Employees";
+            string query = @"SELECT EmployeeID, EmployeeName,Department,MailID, CONVERT(varchar(10),DOJ,120) AS DOJ FROM dbo.Employees";
 
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EmployeeAppDB"].ConnectionString) ) 
             using ( var cmd = new SqlCommand(query, con) )
