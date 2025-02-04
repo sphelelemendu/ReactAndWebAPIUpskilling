@@ -56,6 +56,7 @@ C:\WebApi\WebAPI\WebAPI\bin\Microsoft.Web.Infrastructure.dll
 C:\WebApi\WebAPI\WebAPI\bin\Newtonsoft.Json.Bson.dll
 C:\WebApi\WebAPI\WebAPI\bin\Newtonsoft.Json.dll
 C:\WebApi\WebAPI\WebAPI\bin\System.Buffers.dll
+C:\WebApi\WebAPI\WebAPI\bin\System.Data.SqlClient.dll
 C:\WebApi\WebAPI\WebAPI\bin\System.Memory.dll
 C:\WebApi\WebAPI\WebAPI\bin\System.Net.Http.Formatting.dll
 C:\WebApi\WebAPI\WebAPI\bin\System.Numerics.Vectors.dll
@@ -76,6 +77,7 @@ C:\WebApi\WebAPI\WebAPI\bin\WebGrease.dll
 C:\WebApi\WebAPI\WebAPI\bin\Newtonsoft.Json.Bson.pdb
 C:\WebApi\WebAPI\WebAPI\bin\Newtonsoft.Json.Bson.xml
 C:\WebApi\WebAPI\WebAPI\bin\System.Buffers.xml
+C:\WebApi\WebAPI\WebAPI\bin\System.Data.SqlClient.xml
 C:\WebApi\WebAPI\WebAPI\bin\System.Memory.xml
 C:\WebApi\WebAPI\WebAPI\bin\System.Net.Http.Formatting.xml
 C:\WebApi\WebAPI\WebAPI\bin\System.Numerics.Vectors.xml
@@ -99,3 +101,8 @@ C:\WebApi\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.CoreCompileInputs.cache
 C:\WebApi\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.Up2Date
 C:\WebApi\WebAPI\WebAPI\obj\Debug\WebAPI.dll
 C:\WebApi\WebAPI\WebAPI\obj\Debug\WebAPI.pdb
+C:\WebApi\WebAPI\WebAPI\bin\Unity.Abstractions.dll
+C:\WebApi\WebAPI\WebAPI\bin\Unity.Container.dll
+C:\WebApi\WebAPI\WebAPI\bin\Unity.WebApi.dll
+C:\WebApi\WebAPI\WebAPI\bin\Unity.Abstractions.pdb
+C:\WebApi\WebAPI\WebAPI\bin\Unity.Container.pdb

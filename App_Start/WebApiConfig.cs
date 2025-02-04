@@ -5,6 +5,11 @@ using System.Web.Http;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web.Http.Cors;
+using Unity.Lifetime;
+using Unity;
+using WebAPI.Data_Layer_Service;
+using WebAPI.Controllers;
+using Unity.WebApi;
 namespace WebAPI
 {
     public static class WebApiConfig
@@ -12,6 +17,9 @@ namespace WebAPI
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+            var container = new UnityContainer();
+            container.RegisterType<IEmployeeService,EmployeeService >(new HierarchicalLifetimeManager());
+            config.DependencyResolver = new UnityDependencyResolver(container);
 
             // Web API routes
             config.MapHttpAttributeRoutes();
