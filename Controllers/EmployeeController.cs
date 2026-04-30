@@ -18,9 +18,9 @@ namespace WebAPI.Controllers
         public HttpResponseMessage Get()
         {
             DataTable employeeTable = new DataTable();
-            string query = @"SELECT EmployeeID, EmployeeName,Department,MailID, CONVERT(varchar(10),DOJ,120) AS DOJ FROM dbo.Employees";
+            string query = @"SELECT EmployeeId, EmployeeName, DepartmentName, MailID, CONVERT(varchar(10),DOJ,120) AS DOJ FROM dbo.Employees";
 
-            using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EmployeeAppDB"].ConnectionString) ) 
+            using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["EmployeeDB"].ConnectionString) ) 
             using ( var cmd = new SqlCommand(query, con) )
             using (var da = new SqlDataAdapter(cmd))
             {
@@ -35,7 +35,7 @@ namespace WebAPI.Controllers
             try
             {
                 DataTable employeeTable = new DataTable();
-                string query = @"INSERT INTO dbo.Employees(EmployeeName,Department,MailID,DOJ) VALUES(
+                string query = @"INSERT INTO dbo.Employees(EmployeeName,DepartmentName,MailID,DOJ) VALUES(
                 '" + emp.EmployeeName + @"',
                 '" + emp.DepartmentName + @"',
                 '" + emp.MailID + @"',
@@ -66,7 +66,7 @@ namespace WebAPI.Controllers
                 string query = @"
                 UPDATE dbo.Employees SET
                 EmployeeName= '" + emp.EmployeeName + @"',
-                Department ='" + emp.DepartmentName + @"',
+                DepartmentName ='" + emp.DepartmentName + @"',
                 MailID = '" + emp.MailID + @"',
                 DOJ = '" + emp.DOJ + @"'
                 WHERE EmployeeID = "+emp.EmployeeId+@"

@@ -73,6 +73,9 @@ C:\WebApi\WebAPI\WebAPI\bin\System.Web.Razor.dll
 C:\WebApi\WebAPI\WebAPI\bin\System.Web.WebPages.Deployment.dll
 C:\WebApi\WebAPI\WebAPI\bin\System.Web.WebPages.dll
 C:\WebApi\WebAPI\WebAPI\bin\System.Web.WebPages.Razor.dll
+C:\WebApi\WebAPI\WebAPI\bin\Unity.Abstractions.dll
+C:\WebApi\WebAPI\WebAPI\bin\Unity.Container.dll
+C:\WebApi\WebAPI\WebAPI\bin\Unity.WebApi.dll
 C:\WebApi\WebAPI\WebAPI\bin\WebGrease.dll
 C:\WebApi\WebAPI\WebAPI\bin\Newtonsoft.Json.Bson.pdb
 C:\WebApi\WebAPI\WebAPI\bin\Newtonsoft.Json.Bson.xml
@@ -88,12 +91,14 @@ C:\WebApi\WebAPI\WebAPI\bin\System.Web.Http.xml
 C:\WebApi\WebAPI\WebAPI\bin\System.Web.Http.Cors.xml
 C:\WebApi\WebAPI\WebAPI\bin\System.Web.Http.WebHost.xml
 C:\WebApi\WebAPI\WebAPI\bin\System.Web.Mvc.xml
+C:\WebApi\WebAPI\WebAPI\bin\System.Web.Optimization.xml
 C:\WebApi\WebAPI\WebAPI\bin\System.Web.Razor.xml
 C:\WebApi\WebAPI\WebAPI\bin\System.Web.WebPages.xml
 C:\WebApi\WebAPI\WebAPI\bin\System.Web.WebPages.Deployment.xml
 C:\WebApi\WebAPI\WebAPI\bin\System.Web.WebPages.Razor.xml
 C:\WebApi\WebAPI\WebAPI\bin\Newtonsoft.Json.xml
-C:\WebApi\WebAPI\WebAPI\bin\System.Web.Optimization.xml
+C:\WebApi\WebAPI\WebAPI\bin\Unity.Abstractions.pdb
+C:\WebApi\WebAPI\WebAPI\bin\Unity.Container.pdb
 C:\WebApi\WebAPI\WebAPI\bin\Antlr3.Runtime.pdb
 C:\WebApi\WebAPI\WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\WebApi\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.AssemblyReference.cache
@@ -101,8 +106,3 @@ C:\WebApi\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.CoreCompileInputs.cache
 C:\WebApi\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.Up2Date
 C:\WebApi\WebAPI\WebAPI\obj\Debug\WebAPI.dll
 C:\WebApi\WebAPI\WebAPI\obj\Debug\WebAPI.pdb
-C:\WebApi\WebAPI\WebAPI\bin\Unity.Abstractions.dll
-C:\WebApi\WebAPI\WebAPI\bin\Unity.Container.dll
-C:\WebApi\WebAPI\WebAPI\bin\Unity.WebApi.dll
-C:\WebApi\WebAPI\WebAPI\bin\Unity.Abstractions.pdb
-C:\WebApi\WebAPI\WebAPI\bin\Unity.Container.pdb
