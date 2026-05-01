@@ -193,6 +193,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DataLayerService\EmployeeService.cs" />
+    <Compile Include="Helpers\KeyVaultHelper.cs" />
     <Compile Include="DataLayerService\IEmployeeService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
