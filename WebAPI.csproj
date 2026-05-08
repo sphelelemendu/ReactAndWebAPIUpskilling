@@ -187,14 +187,15 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\DepartmentController.cs" />
-    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DataLayerService\DepartmentService.cs" />
     <Compile Include="DataLayerService\EmployeeService.cs" />
-    <Compile Include="Helpers\KeyVaultHelper.cs" />
+    <Compile Include="DataLayerService\IDepartmentService.cs" />
     <Compile Include="DataLayerService\IEmployeeService.cs" />
+    <Compile Include="Helpers\KeyVaultHelper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

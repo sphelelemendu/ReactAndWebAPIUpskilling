@@ -8,7 +8,6 @@ using System.Web.Http.Cors;
 using Unity.Lifetime;
 using Unity;
 using WebAPI.Data_Layer_Service;
-using WebAPI.Controllers;
 using Unity.WebApi;
 namespace WebAPI
 {
@@ -18,7 +17,8 @@ namespace WebAPI
         {
             // Web API configuration and services
             var container = new UnityContainer();
-            container.RegisterType<IEmployeeService,EmployeeService >(new HierarchicalLifetimeManager());
+            container.RegisterType<IEmployeeService, EmployeeService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IDepartmentService, DepartmentService>(new HierarchicalLifetimeManager());
             config.DependencyResolver = new UnityDependencyResolver(container);
 
             // Web API routes
