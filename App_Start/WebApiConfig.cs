@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
-using System.Net.Http;
+﻿using System.Configuration;
 using System.Net.Http.Headers;
+using System.Web.Http;
 using System.Web.Http.Cors;
-using Unity.Lifetime;
 using Unity;
-using WebAPI.Data_Layer_Service;
+using Unity.Lifetime;
 using Unity.WebApi;
+using WebAPI.Data_Layer_Service;
 namespace WebAPI
 {
     public static class WebApiConfig
@@ -32,7 +29,8 @@ namespace WebAPI
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(
                 
                 new MediaTypeHeaderValue( "text/html" ) );
-            config.EnableCors(new EnableCorsAttribute("http://localhost:3000","*", "*"));
+            var allowedOrigin = ConfigurationManager.AppSettings["AllowedOrigin"];
+            config.EnableCors(new EnableCorsAttribute(allowedOrigin, "Content-Type,Authorization", "GET,POST,PUT,DELETE"));
         }
     }
 }
