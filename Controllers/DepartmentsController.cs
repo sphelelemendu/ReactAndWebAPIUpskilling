@@ -24,6 +24,9 @@ namespace WebAPI.Controllers
         [HttpPost]
         public HttpResponseMessage Post(Department dep)
         {
+            if (!ModelState.IsValid)
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+
             _departmentService.AddDepartment(dep);
             return Request.CreateResponse(HttpStatusCode.Created);
         }
@@ -31,6 +34,9 @@ namespace WebAPI.Controllers
         [HttpPut]
         public HttpResponseMessage Put(Department dep)
         {
+            if (!ModelState.IsValid)
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+
             _departmentService.UpdateDepartment(dep);
             return Request.CreateResponse(HttpStatusCode.OK);
         }

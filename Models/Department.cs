@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace WebAPI.Models
 {
     public class Department
     {
         public long DepartmentID { get; set; }
-        public string DepartmentName { get; set; }
 
+        [Required(ErrorMessage = "Department name is required.")]
+        [MaxLength(100, ErrorMessage = "Department name cannot exceed 100 characters.")]
+        public string DepartmentName { get; set; }
     }
 }

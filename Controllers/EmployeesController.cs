@@ -24,6 +24,9 @@ namespace WebAPI.Controllers
         [HttpPost]
         public HttpResponseMessage Post(Employee emp)
         {
+            if (!ModelState.IsValid)
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+
             _employeeService.AddEmployee(emp);
             return Request.CreateResponse(HttpStatusCode.Created);
         }
@@ -31,6 +34,9 @@ namespace WebAPI.Controllers
         [HttpPut]
         public HttpResponseMessage Put(Employee emp)
         {
+            if (!ModelState.IsValid)
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+
             _employeeService.UpdateEmployee(emp);
             return Request.CreateResponse(HttpStatusCode.OK);
         }
