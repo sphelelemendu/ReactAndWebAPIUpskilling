@@ -17,8 +17,8 @@ namespace WebAPI.Controllers
 
         public HttpResponseMessage Get()
         {
-            var table = _employeeService.GetEmployees();
-            return Request.CreateResponse(HttpStatusCode.OK, table);
+            var employees = _employeeService.GetEmployees();
+            return Request.CreateResponse(HttpStatusCode.OK, employees);
         }
 
         [HttpPost]

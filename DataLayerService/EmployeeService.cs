@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -10,19 +11,32 @@ namespace WebAPI.Data_Layer_Service
     {
         private string ConnectionString => ConfigurationManager.ConnectionStrings["EmployeeAppDB"].ConnectionString;
 
-        public DataTable GetEmployees()
+        public List<Employee> GetEmployees()
         {
-            DataTable table = new DataTable();
-            string query = "SELECT EmployeeID, EmployeeName, DepartmentName, MailID, CONVERT(varchar(10), DOJ, 120) AS DOJ FROM dbo.Employees";
+            var employees = new List<Employee>();
+            string query = "SELECT EmployeeID, EmployeeName, DepartmentName, MailID, DOJ FROM dbo.Employees";
 
             using (var con = new SqlConnection(ConnectionString))
             using (var cmd = new SqlCommand(query, con))
-            using (var da = new SqlDataAdapter(cmd))
             {
-                da.Fill(table);
+                con.Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        employees.Add(new Employee
+                        {
+                            EmployeeId = Convert.ToInt64(reader["EmployeeID"]),
+                            EmployeeName = reader["EmployeeName"] as string,
+                            DepartmentName = reader["DepartmentName"] as string,
+                            MailID = reader["MailID"] as string,
+                            DOJ = reader["DOJ"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["DOJ"])
+                        });
+                    }
+                }
             }
 
-            return table;
+            return employees;
         }
 
         public void AddEmployee(Employee emp)

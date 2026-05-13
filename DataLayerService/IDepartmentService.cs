@@ -1,11 +1,11 @@
-using System.Data;
+using System.Collections.Generic;
 using WebAPI.Models;
 
 namespace WebAPI.Data_Layer_Service
 {
     public interface IDepartmentService
     {
-        DataTable GetDepartments();
+        List<Department> GetDepartments();
         void AddDepartment(Department dep);
         void UpdateDepartment(Department dep);
         void DeleteDepartment(int id);

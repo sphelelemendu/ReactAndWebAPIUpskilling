@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -10,19 +11,29 @@ namespace WebAPI.Data_Layer_Service
     {
         private string ConnectionString => ConfigurationManager.ConnectionStrings["EmployeeAppDB"].ConnectionString;
 
-        public DataTable GetDepartments()
+        public List<Department> GetDepartments()
         {
-            DataTable table = new DataTable();
+            var departments = new List<Department>();
             string query = "SELECT DepartmentID, DepartmentName FROM dbo.Departments";
 
             using (var con = new SqlConnection(ConnectionString))
             using (var cmd = new SqlCommand(query, con))
-            using (var da = new SqlDataAdapter(cmd))
             {
-                da.Fill(table);
+                con.Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        departments.Add(new Department
+                        {
+                            DepartmentID = Convert.ToInt64(reader["DepartmentID"]),
+                            DepartmentName = reader["DepartmentName"] as string
+                        });
+                    }
+                }
             }
 
-            return table;
+            return departments;
         }
 
         public void AddDepartment(Department dep)
