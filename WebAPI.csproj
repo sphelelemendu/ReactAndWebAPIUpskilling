@@ -191,6 +191,8 @@
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Infrastructure\GlobalExceptionHandler.cs" />
+    <Compile Include="Infrastructure\GlobalExceptionLogger.cs" />
     <Compile Include="DataLayerService\DepartmentService.cs" />
     <Compile Include="DataLayerService\EmployeeService.cs" />
     <Compile Include="DataLayerService\IDepartmentService.cs" />

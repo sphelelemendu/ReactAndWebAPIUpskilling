@@ -2,6 +2,8 @@
 using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using System.Web.Http.ExceptionHandling;
+using WebAPI.Infrastructure;
 
 namespace WebAPI
 {
@@ -9,6 +11,9 @@ namespace WebAPI
     {
         public static void Register(HttpConfiguration config)
         {
+            config.Services.Replace(typeof(IExceptionHandler), new GlobalExceptionHandler());
+            config.Services.Add(typeof(IExceptionLogger), new GlobalExceptionLogger());
+
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
