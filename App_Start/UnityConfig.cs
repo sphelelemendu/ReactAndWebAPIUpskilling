@@ -1,6 +1,8 @@
 using System.Web.Http;
 using Unity;
+using Unity.Lifetime;
 using Unity.WebApi;
+using WebAPI.Data_Layer_Service;
 
 namespace WebAPI
 {
@@ -8,13 +10,9 @@ namespace WebAPI
     {
         public static void RegisterComponents()
         {
-			var container = new UnityContainer();
-            
-            // register all your components with the container here
-            // it is NOT necessary to register your controllers
-            
-            // e.g. container.RegisterType<ITestService, TestService>();
-            
+            var container = new UnityContainer();
+            container.RegisterType<IEmployeeService, EmployeeService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IDepartmentService, DepartmentService>(new HierarchicalLifetimeManager());
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
     }
