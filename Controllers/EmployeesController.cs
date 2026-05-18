@@ -20,7 +20,6 @@ namespace WebAPI.Controllers
             var employees = _employeeService.GetEmployees();
             return Request.CreateResponse(HttpStatusCode.OK, employees);
         }
-
         [HttpPost]
         public HttpResponseMessage Post(Employee emp)
         {
