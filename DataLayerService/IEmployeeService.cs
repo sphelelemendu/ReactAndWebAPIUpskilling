@@ -8,6 +8,6 @@ namespace WebAPI.Data_Layer_Service
         List<Employee> GetEmployees();
         void AddEmployee(Employee emp);
         void UpdateEmployee(Employee emp);
-        void DeleteEmployee(int id);
+        void DeleteEmployee(long id);
     }
 }

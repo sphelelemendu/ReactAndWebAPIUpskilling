@@ -42,7 +42,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpDelete]
-        public HttpResponseMessage Delete(int id)
+        public HttpResponseMessage Delete(long id)
         {
             _departmentService.DeleteDepartment(id);
             return Request.CreateResponse(HttpStatusCode.OK);

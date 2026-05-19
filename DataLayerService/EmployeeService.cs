@@ -72,7 +72,7 @@ namespace WebAPI.Data_Layer_Service
             }
         }
 
-        public void DeleteEmployee(int id)
+        public void DeleteEmployee(long id)
         {
             string query = "DELETE FROM dbo.Employees WHERE EmployeeID=@Id";
 
